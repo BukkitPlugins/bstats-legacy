@@ -10,7 +10,11 @@ let cluster = null;
  */
 function getRedisCluster() {
     if (cluster === null) {
-        cluster = new Redis.Cluster(config.redis);
+        if (Array.isArray(config.redis)) {
+            cluster = new Redis.Cluster(config.redis);
+        } else {
+            cluster = new Redis(config.redis);
+        }
     }
     return cluster;
 }
