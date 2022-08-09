@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="description" content="A description on how to include bStats to your plugin">
+    <meta name="description" content="A description on how to include pStats to your plugin">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>bStats - Include metrics</title>
+    <title>pStats - Include metrics</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-content">
                     <b>You've successfully added your plugin!</b><br>
-                    If you haven't done it already, you have to add bStats to your plugin.<br>
+                    If you haven't done it already, you have to add pStats to your plugin.<br>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 <div class="card-content">
                     <b>Useful Information</b><br>
                     Your plugin <b><%= pluginName %></b> has the plugin id <b><%= pluginId %></b>.
-                    You will need it when adding bStats to your plugin.
+                    You will need it when adding pStats to your plugin.
                     <br>
                     You can view the ids of all your plugins by visiting the <a href="/what-is-my-plugin-id">What is my plugin id?</a> page.
                 </div>
@@ -46,26 +46,26 @@
         <div class="col s12">
             <div class="card">
                 <div class="card-content">
-                    <p>Including bStats is very easy. There are basically two ways to include bStats:</p>
+                    <p>Including pStats is very easy. There are basically two ways to include pStats:</p>
                     <ul class="collapsible" data-collapsible="accordion">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">code</i>Using Maven to shade bStats</div>
+                            <div class="collapsible-header"><i class="material-icons">code</i>Using Maven to shade pStats</div>
                             <div class="collapsible-body">
                                 <div style="margin-left: 10px; margin-top: 4px; margin-right: 10px;">
                                     <b class="red-text">Note: You are expected to have a basic understanding on how to use Maven!</b><br>
                                     <b>1. Include the dependency.</b><br>
-                                    There are 4 possible artifact ids: <i><b>bstats-bukkit</b></i>, <i><b>bstats-bungeecord</b></i>, <i><b>bstats-sponge</b></i>, and <i><b>bstats-velocity</b></i>.
+                                    There are 4 possible artifact ids: <i><b>pStats-bukkit</b></i>, <i><b>pStats-bungeecord</b></i>, <i><b>pStats-sponge</b></i>, and <i><b>pStats-velocity</b></i>.
                                     <pre class="prettyprint withBox" style="border: none"><code class="language-xml">&lt;dependency&gt;
-  &lt;groupId&gt;org.bstats&lt;/groupId&gt;
-  &lt;artifactId&gt;bstats-bukkit&lt;/artifactId&gt;
+  &lt;groupId&gt;org.pStats&lt;/groupId&gt;
+  &lt;artifactId&gt;pStats-bukkit&lt;/artifactId&gt;
   &lt;version&gt;3.0.0&lt;/version&gt;
   &lt;scope&gt;compile&lt;/scope&gt;
 &lt;/dependency&gt;</code></pre>
-                                    <b>3. Shade bStats into your plugin.</b><br>
+                                    <b>3. Shade pStats into your plugin.</b><br>
                                     This step is very important. Shading means, that the necessary classes are copied into
                                     your plugin when you compile it. It also relocates the class to an other package.
                                     Make sure to change <i>your.package</i> to your own package! If you are using
-                                    Sponge, do <b>not</b> relocate the bStats class (just remove the
+                                    Sponge, do <b>not</b> relocate the pStats class (just remove the
                                     &lt;configuration&gt;...&lt;/configuration&gt; part).
                                     <pre class="prettyprint withBox" style="border: none"><code class="language-xml">&lt;build&gt;
   &lt;plugins&gt;
@@ -76,7 +76,7 @@
       &lt;configuration&gt;
         &lt;relocations&gt;
           &lt;relocation&gt;
-            &lt;pattern&gt;org.bstats&lt;/pattern&gt;
+            &lt;pattern&gt;org.pStats&lt;/pattern&gt;
             &lt;!-- Replace this with your package! --&gt;
             &lt;shadedPattern&gt;your.package&lt;/shadedPattern&gt;
           &lt;/relocation&gt;
@@ -120,10 +120,10 @@
       &lt;version&gt;LATEST&lt;/version&gt;
       &lt;scope&gt;provided&lt;/scope&gt;
     &lt;/dependency&gt;
-    &lt;!-- bStats --&gt;
+    &lt;!-- pStats --&gt;
     &lt;dependency&gt;
-      &lt;groupId&gt;org.bstats&lt;/groupId&gt;
-      &lt;artifactId&gt;bstats-bukkit&lt;/artifactId&gt;
+      &lt;groupId&gt;org.pStats&lt;/groupId&gt;
+      &lt;artifactId&gt;pStats-bukkit&lt;/artifactId&gt;
       &lt;version&gt;3.0.0&lt;/version&gt;
       &lt;scope&gt;compile&lt;/scope&gt;
     &lt;/dependency&gt;
@@ -138,7 +138,7 @@
         &lt;configuration&gt;
           &lt;relocations&gt;
             &lt;relocation&gt;
-              &lt;pattern&gt;org.bstats&lt;/pattern&gt;
+              &lt;pattern&gt;org.pStats&lt;/pattern&gt;
               &lt;shadedPattern&gt;me.name.util&lt;/shadedPattern&gt;
             &lt;/relocation&gt;
           &lt;/relocations&gt;
@@ -164,9 +164,9 @@
                             <div class="collapsible-body">
                                 <div style="margin-left: 10px; margin-top: 4px; margin-right: 10px;">
                                     If you don't want to use Maven that's no problem. You can just copy and paste the required class into your project.
-                                    All classes can be found in the <a href="https://github.com/Bastian/bStats-Metrics/tree/single-file">GitHub repository</a>.<br>
+                                    All classes can be found in the <a href="https://github.com/Bastian/pStats-Metrics/tree/single-file">GitHub repository</a>.<br>
                                     Just copy the class fitting your server software.
-                                    Make sure to change the package from <i>org.bstats</i> to your own package.<br>
+                                    Make sure to change the package from <i>org.pStats</i> to your own package.<br>
                                     <div style="overflow-x:auto;">
                                         <div style="min-width: 300px">
                                             <table>

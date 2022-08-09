@@ -5,45 +5,45 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://bstats.org/</loc>
+    <loc>https://pstats.devs.beer/</loc>
   </url>
   <url>
-    <loc>https://bstats.org/plugin-list</loc>
+    <loc>https://pstats.devs.beer/plugin-list</loc>
   </url>
   <url>
-    <loc>https://bstats.org/global/bukkit</loc>
+    <loc>https://pstats.devs.beer/global/bukkit</loc>
   </url>
   <url>
-    <loc>https://bstats.org/global/bungeecord</loc>
+    <loc>https://pstats.devs.beer/global/bungeecord</loc>
   </url>
   <url>
-    <loc>https://bstats.org/global/sponge</loc>
+    <loc>https://pstats.devs.beer/global/sponge</loc>
   </url>
   <url>
-    <loc>https://bstats.org/login</loc>
+    <loc>https://pstats.devs.beer/login</loc>
   </url>
   <url>
-    <loc>https://bstats.org/register</loc>
+    <loc>https://pstats.devs.beer/register</loc>
   </url>
   <url>
-    <loc>https://bstats.org/getting-started</loc>
+    <loc>https://pstats.devs.beer/getting-started</loc>
   </url>
   <url>
-    <loc>https://bstats.org/imprint</loc>
+    <loc>https://pstats.devs.beer/imprint</loc>
   </url>
   <url>
-    <loc>https://bstats.org/privacy-policy</loc>
+    <loc>https://pstats.devs.beer/privacy-policy</loc>
   </url>
   <url>
-    <loc>https://bstats.org/getting-started/metrics-class</loc>
+    <loc>https://pstats.devs.beer/getting-started/metrics-class</loc>
   </url>
   <url>
-    <loc>https://bstats.org/help/custom-charts</loc>
+    <loc>https://pstats.devs.beer/help/custom-charts</loc>
   </url>
   <url>
-    <loc>https://bstats.org/help/rest-api</loc>
+    <loc>https://pstats.devs.beer/help/rest-api</loc>
   </url>
   <url>
-    <loc>https://bstats.org/faq</loc>
+    <loc>https://pstats.devs.beer/faq</loc>
   </url>
 </urlset>
