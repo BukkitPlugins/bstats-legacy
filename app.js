@@ -95,7 +95,7 @@ app.use(function (req, res, next) {
 // Middleware to include the custom color local
 app.use(function (req, res, next) {
     let customColor1 = req.cookies["custom-color1"];
-    customColor1 = customColor1 === undefined ? 'teal' : customColor1;
+    customColor1 = customColor1 === undefined ? 'purple' : customColor1;
     res.locals.customColor1 = customColor1;
     next();
 });
