@@ -87,17 +87,6 @@
     <% } %>
 </ul>
 
-<!-- Account -->
-<ul id="dropdownAccount" class="dropdown-content">
-    <% if (loggedIn) { %>
-    <li><a href="/author/<%= user.username %>" class="truncate <%= customColor1 %>-text">My page</a></li>
-    <li><a href="/logout" class="truncate <%= customColor1 %>-text">Logout</a></li>
-    <% } else { %>
-    <li><a href="/register" class="truncate <%= customColor1 %>-text">Register</a></li>
-    <li><a href="/login" class="truncate <%= customColor1 %>-text">Login</a></li>
-    <% } %>
-</ul>
-
 <nav class="<%= customColor1 %> darken-3" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="/" class="brand-logo left hide-on-med-and-down tooltipped" data-position="right" data-delay="5000" data-tooltip="You found a secret tooltip!">pStats</a>
@@ -115,19 +104,12 @@
             <li><a href="/add-plugin">
                     <i class="material-icons left" style="font-size: 30px">add</i>Add plugin
                 </a></li>
-            <% } else { %>
-            <li><a href="/plugin/1337/random">
-                    <i class="material-icons left" style="font-size: 30px">shuffle</i>Random plugin
-                </a></li>
             <% } %>
             <li><a href="/plugin-list">
-                    <i class="material-icons left" style="font-size: 30px">list</i>Plugin list
+                    <i class="material-icons left" style="font-size: 30px">list</i>Plugins
                 </a></li>
             <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-hover="true" data-activates="dropdownGlobalStats">
-                    <i class="material-icons left" style="font-size: 30px">language</i>Global stats
-                </a></li>
-            <li><a class="dropdown-button" href="#!" data-beloworigin="true" data-hover="true" data-activates="dropdownAccount">
-                    <i class="material-icons left" style="font-size: 30px">account_circle</i>Account
+                    <i class="material-icons left" style="font-size: 30px">language</i>Servers
                 </a></li>
         </ul>
 
