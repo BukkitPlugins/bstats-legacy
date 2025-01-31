@@ -13,7 +13,7 @@ Highcharts.createElement('link', {
 // Add the background image to the container
 Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function (proceed) {
     proceed.call(this);
-    this.container.style.background = 'url(/images/backgrounds/sand.jpg)';
+    this.container.style.background = 'rgba(17,24,39,1.0)';
 });
 
 Highcharts.theme = {
@@ -25,10 +25,11 @@ Highcharts.theme = {
             fontFamily: "Signika, serif"
         }
     },
+    contrastTextColor: '#F0F0F3',
     title: {
         useHTML: true,
         style: {
-            color: 'black',
+            color: 'white',
             fontSize: '16px',
             fontWeight: 'bold'
         }
@@ -38,7 +39,7 @@ Highcharts.theme = {
     },
     subtitle: {
         style: {
-            color: 'black'
+            color: 'white'
         }
     },
     tooltip: {
