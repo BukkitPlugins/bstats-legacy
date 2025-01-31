@@ -6,7 +6,7 @@
  * Made By MaterializeCSS.com
  */
 
-body {
+ body {
     background: rgba(17,24,39,1.0);
     color: white;
     display: flex;
@@ -47,4 +47,58 @@ main {
 .ltr-text {
    unicode-bidi: bidi-override;
    direction: rtl
+}
+
+/* Table styling */
+div.material-table table tr td {
+    color: white !important;
+}
+
+div.material-table .table-title {
+    color: white !important;
+}
+
+div.material-table table th.sorting_asc,
+div.material-table table th.sorting_desc {
+    color: white !important;
+}
+
+div.material-table table th {
+    font-size: 12px;
+    font-weight: 500;
+    color: #aeaeae !important;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 0;
+    height: 56px;
+    padding-left: 56px;
+    vertical-align: middle;
+    outline: none !important;
+}
+
+div.material-table .table-footer {
+    color: white !important;
+}
+
+div.material-table .table-footer label {
+    color: white !important;
+}
+
+div.material-table .table-footer .material-pagination li a {
+    color: white !important;
+}
+
+div.material-table table tbody tr:hover {
+    background-color: #181f2a !important;
+}
+
+.card {
+    background: #1e2836;
+}
+
+/* End Table styling */
+
+/* Top navbar dropdown menu */
+.dropdown-content {
+    background-color: rgb(22 31 51);
 }
