@@ -78,7 +78,7 @@ function handlePieChart(chartId, chart) {
             },
             plotOptions: {
                 pie: {
-                    size: 180,
+                    size: 300,
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
@@ -86,7 +86,9 @@ function handlePieChart(chartId, chart) {
                         format: '<b>{point.name}</b>: {point.percentage:.1f} %',
                         style: {
                             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
-                            textOutline: '1px contrast'
+                            textOutline: '1px contrast',
+                            fontSize: '14px',
+                            fontWeight: 'bold',
                         }
                     },
                     showInLegend: $(window).width() <= 600
@@ -146,14 +148,17 @@ function handleDrilldownPieChart(chartId, chart) {
             },
             plotOptions: {
                 pie: {
-                    size: 180,
+                    size: 300,
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: $(window).width() > 600,
                         format: '<b>{point.name}</b>: {point.percentage:.1f} %',
                         style: {
-                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+                            textOutline: '1px contrast',
+                            fontSize: '14px',
+                            fontWeight: 'bold',
                         }
                     },
                     showInLegend: $(window).width() <= 600
@@ -172,7 +177,10 @@ function handleDrilldownPieChart(chartId, chart) {
                 data: data.seriesData
             }],
             drilldown: {
-                series: data.drilldownData
+                series: data.drilldownData,
+                activeDataLabelStyle: {
+                    color: 'white' // Color of the links (drilldown labels)
+                }
             }
         });
     });
@@ -193,6 +201,11 @@ function handleLineChart(chartId, chart) {
             },
 
             rangeSelector: {
+                buttonTheme: {
+                    fill: '#333', // Buttons background color
+                    style: { color: 'white' } // Text color of the buttons
+                },
+                labelStyle: { color: 'white' }, // Title color
                 buttons: [{
                     type: 'day',
                     count: 1,
@@ -240,13 +253,26 @@ function handleLineChart(chartId, chart) {
                 },
                 buttons: {
                     contextButton: {
-                        menuItems: ['loadFullData']
+                        menuItems: ['loadFullData'],
+                        theme: {
+                            fill: '#333',
+                            stroke: '#555',
+                            style: { color: 'white' }
+                        }
                     }
                 }
             },
 
             xAxis: {
-                ordinal: false
+                ordinal: false, 
+                labels: {
+                    style: {
+                        color: 'white', // Color of X axis labels
+                        textOutline: '1px contrast',
+                        fontSize: '14px',
+                        fontWeight: 'bold',
+                    }
+                }
             },
 
             yAxis: {
@@ -260,6 +286,16 @@ function handleLineChart(chartId, chart) {
                         }
                     }
                 }
+            },
+
+            scrollbar: {
+                barBackgroundColor: '#444444',
+                barBorderColor: '#666666',
+                buttonArrowColor: 'white',
+                buttonBackgroundColor: '#333333',
+                rifleColor: 'white',
+                trackBackgroundColor: '#222222',
+                trackBorderColor: '#444444'
             },
 
             title : {
@@ -364,7 +400,7 @@ function handleMapChart(chartId, chart) {
                 title: {
                     text: chart.data.valueName,
                     style: {
-                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                        color: 'white' // "Servers" text
                     }
                 }
             },
@@ -377,7 +413,11 @@ function handleMapChart(chartId, chart) {
                 enabled: true,
                 enableMouseWheelZoom: false,
                 buttonOptions: {
-                    verticalAlign: 'bottom'
+                    verticalAlign: 'bottom',
+                     theme: {
+                        fill: '#333',
+                        style: { color: 'white' }
+                    }
                 }
             },
 
@@ -391,6 +431,9 @@ function handleMapChart(chartId, chart) {
                 ' {point.name}: <b>{point.value}</b>',
                 positioner: function () {
                     return { x: 0, y: 250 };
+                },
+                style: {
+                    color: 'white' // Legend text color
                 }
             },
 
@@ -399,7 +442,12 @@ function handleMapChart(chartId, chart) {
                 max: 5000,
                 type: 'logarithmic',
                 minColor: '#FFCDD2',
-                maxColor: '#B71C1C'
+                maxColor: '#B71C1C',
+                labels: {
+                    style: {
+                        color: 'white' // Axis numbers color
+                    }
+                }
             },
 
             series : [{
@@ -413,7 +461,9 @@ function handleMapChart(chartId, chart) {
                     hover: {
                         color: '#B71C1C'
                     }
-                }
+                },
+                borderColor: '#444444', // Border of the states
+                borderWidth: 0.5, // Border width of the states
             }]
         });
     });
